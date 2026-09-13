@@ -19,6 +19,8 @@ def extract_yt_audio(url:str)->str:
         'quiet': False,
         'verbose': True,
 
+        'source_address': '0.0.0.0',
+
         'js_runtimes': {
             'deno': {
                 'path': deno_path
