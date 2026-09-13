@@ -28,6 +28,7 @@ def extract_yt_audio(url:str)->str:
         },
         
         'extractor_args': {
+            'youtube': {'player_client': ['mweb']},
             'youtubepot-bgutilhttp': {
                 'base_url': [os.getenv("POT_PROVIDER_URL")]
             }
