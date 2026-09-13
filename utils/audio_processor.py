@@ -16,7 +16,8 @@ def extract_yt_audio(url:str)->str:
         'format': 'bestaudio/best',
         'outtmpl': output_path,
         'noplaylist': True,
-        'quiet': True,
+        'quiet': False,
+        'verbose': True,
 
         'js_runtimes': {
             'deno': {
