@@ -225,16 +225,13 @@ else:
         st.write(result["summary"])
 
     with tab_actions:
-        for item in result["action_items"]:
-            st.markdown(f"- {item}")
+        st.markdown(result["action_items"])
 
     with tab_decisions:
-        for item in result["key_decisions"]:
-            st.markdown(f"- {item}")
+        st.markdown(result["key_decisions"])
 
     with tab_questions:
-        for item in result["open_questions"]:
-            st.markdown(f"- {item}")
+        st.markdown(result["open_questions"])
 
     with tab_transcript:
         st.text_area("Full transcript", str(result["transcript"]), height=400)

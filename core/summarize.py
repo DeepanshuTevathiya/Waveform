@@ -1,15 +1,15 @@
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
-from langchain_mistralai import ChatMistralAI
+from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser, PydanticOutputParser
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pydantic import BaseModel, Field
 import os
 
 def get_llm():
-    return ChatMistralAI(
-        model_name="mistral-small-latest",
-        api_key=os.getenv("MISTRAL_API_KEY"),
-        temperature=0.3
+    return ChatGroq(
+        model="openai/gpt-oss-20b",
+        api_key=os.getenv("GROQ_API_KEY"),
+        temperature=0.2
     )
 
 def split_text(transcript:str)->list:
