@@ -3,14 +3,14 @@ from pydub import AudioSegment
 from rich import print
 import subprocess
 import os
-import shutil
+from utils.deno_setup import ensure_deno
 
 
 DOWNLOADS_DIR = "downloads"
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 
 def extract_yt_audio(url:str)->str:
-    deno_path = shutil.which("deno")
+    deno_path = ensure_deno()
     output_path = os.path.join(DOWNLOADS_DIR, '%(title)s.%(ext)s')
     ydl_opts = {
         'format': 'bestaudio/best',
