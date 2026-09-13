@@ -23,6 +23,12 @@ def extract_yt_audio(url:str)->str:
                 'path': deno_path
             }
         },
+        
+        'extractor_args': {
+            'youtubepot-bgutilhttp': {
+                'base_url': [os.getenv("POT_PROVIDER_URL")]
+            }
+        },
 
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
