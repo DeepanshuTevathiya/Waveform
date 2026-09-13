@@ -7,7 +7,12 @@ from core.transcibe import transcribe_all
 from core.summarize import get_summary
 from core.extractor import extract_action_items, extract_key_decisions, extract_questions
 from core.rag_engine import build_rag_chain, ask_question
+import yt_dlp
+import deno
+import streamlit as st
 
+st.write("yt-dlp:", yt_dlp.version.__version__)
+st.write("Deno:", deno.find_deno_bin())
 load_dotenv()
 
 st.set_page_config(page_title="Waveform", page_icon="🎙️", layout="wide")
