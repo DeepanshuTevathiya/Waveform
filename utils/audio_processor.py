@@ -3,6 +3,7 @@ from pydub import AudioSegment
 from rich import print
 import subprocess
 import os
+import requests
 from utils.deno_setup import ensure_deno
 
 
@@ -12,6 +13,8 @@ os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 def extract_yt_audio(url:str)->str:
     deno_path = ensure_deno()
     output_path = os.path.join(DOWNLOADS_DIR, '%(title)s.%(ext)s')
+    print("Outbound IP seen by internet:", requests.get('https://api.ipify.org').text)
+    
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': output_path,
